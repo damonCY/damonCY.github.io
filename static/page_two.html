@@ -5,7 +5,7 @@
     <meta http-equiv="cache-control" content="no-cache">
 </head>
 <body>
-<h1>two.html</h1>
+<h1>page_two.html</h1>
 <input type="button" value="back" id="back">
 <input type="button" value="sendMessageToQucikapp" id="send">
 <h2></h2>
@@ -16,7 +16,6 @@
       document.body.querySelector('h2').innerHTML = data
     }
     document.body.querySelector('#back').addEventListener('click', function () {
-      alert(2)
       window.history.back()
     });
     document.body.querySelector('#send').addEventListener('click', sendMsg);

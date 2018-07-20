@@ -10,6 +10,7 @@
 <h2></h2>
 <script>
   window.addEventListener('load', function(){
+    var system = system || window
     system.onmessage = function(data){
       document.body.querySelector('h2').innerHTML = data
     }

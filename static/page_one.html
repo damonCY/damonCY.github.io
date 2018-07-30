@@ -6,25 +6,18 @@
 <body>
 <h1>page_one.html</h1>
 <a href="https://damoncy.github.io/static/page_two.html">page_two.page</a>
-<input type="button" value="sendMessageToQucikapp" onclick="sendMsg">
+<p>
+  <input type="button" value="sendMessageToQucikapp" onclick="sendMsg">
+</p>
 <h2></h2>
 <script>
   window.addEventListener('load', function(){
-    var system = system || window
     system.onmessage = function(data){
       document.body.querySelector('h2').innerHTML = data
     }
     document.body.querySelector('input').addEventListener('click', sendMsg);
-    function getTime () {
-      var time = new Date()
-      var H = time.getHours();
-      var m = time.getMinutes();
-      var s = time.getSeconds();
-      return H + ':' + m + ':' + s;
-    }
     function sendMsg () {
-      var date = getTime();
-      system.postMessage('This messages from page_one.html(' + date + ')')
+      system.postMessage('page_one.html: hello quickapp')
     }
   })
 </script>

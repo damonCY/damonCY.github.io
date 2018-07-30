@@ -7,7 +7,9 @@
 <body>
 <h1>page_two.html</h1>
 <input type="button" value="back" id="back">
-<input type="button" value="sendMessageToQucikapp" id="send">
+<p>
+  <input type="button" value="sendMessageToQucikapp" id="send">
+</p>
 <h2></h2>
 <script>
   window.addEventListener('load', function () {
@@ -17,18 +19,10 @@
     }
     document.body.querySelector('#back').addEventListener('click', function () {
       window.history.back()
-    });
+    })
     document.body.querySelector('#send').addEventListener('click', sendMsg);
-    function getTime() {
-      var time = new Date()
-      var H = time.getHours();
-      var m = time.getMinutes();
-      var s = time.getSeconds();
-      return H + ':' + m + ':' + s;
-    }
     function sendMsg() {
-      var date = getTime();
-      system.postMessage('This messages from page_two.html(' + date + ')')
+      system.postMessage('page_two.html: hello quickapp')
     }
   })
 </script>
